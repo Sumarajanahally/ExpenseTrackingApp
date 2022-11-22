@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model ="clr-namespace:ExpenseTrackingApp.Models"
+             x:Class="ExpenseTrackingApp.Views.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="Lstview" IsGroupingEnabled="True" 
+                     GroupDisplayBinding="{Binding ExpenseCategoryName}"
+                      Margin="20"
+                      
+                      SeparatorVisibility="Default">
+                <!-- ItemSelected="Listview_ItemSelected"-->
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" HeightRequest="20" BackgroundColor="WhiteSmoke">
+                                    <Label Text="{Binding Name}"
+                                 FontSize="15" Margin="20,0,0,0" HorizontalOptions ="Start" VerticalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding Amount}"
+                                FontSize="15" Margin="0,0,35,0" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                        <!-- <TextCell Text="{Binding Amount}" Detail="{Binding Name}" /> -->         
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

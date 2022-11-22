@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseTrackingApp.Views.ExpensePage">
+    <ContentPage.Content>
+        <StackLayout Margin="20,10,20,0">
+            <Label Text="Expense" FontSize="20" FontAttributes="Bold" />
+            <Editor x:Name="ExpenseDesc"
+                  Placeholder="Enter your expense description"
+                  HeightRequest="100"></Editor>
+            <Editor x:Name="ExpenseAmount"
+                    Placeholder="Enter Amount"
+                    HeightRequest="50"/>
+            <Picker x:Name="ExpenseT"  
+                    Title="Select a Expense Type" >
+                <!--ItemsSource="{Binding Expe}" -->
+                <Picker.Items>
+                    <x:String>Food</x:String>
+                    <x:String>Automobile</x:String>
+                    <x:String>Medical</x:String>
+                    <x:String>Utilities</x:String>
+                    <x:String>Rent</x:String>
+                    <x:String>Misc</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Date" Margin ="0,10,0,0 " HorizontalOptions="Start" />
+            <DatePicker x:Name="ExpenseDate"
+                       
+                        Format="d"
+                        HorizontalOptions="StartAndExpand"
+                        DateSelected="ExpenseDate_DateSelected" />
+            
+            <Grid VerticalOptions="EndAndExpand" Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name ="Save" Text="Save" Grid.Column="0" BackgroundColor="LightBlue" Clicked="Save_Clicked"/>
+                <Button x:Name ="Delete" Text="Delete" Grid.Column="1" BackgroundColor="LightCoral" TextColor="White" Clicked= "Delete_Clicked"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

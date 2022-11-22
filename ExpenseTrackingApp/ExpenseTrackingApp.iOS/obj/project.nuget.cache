@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z6cR1F1rL26JyUSmlpDV19bVG7tuo/Ya3OCj1RdY88DD4kUGiagiuvGNO6fl049dRR7wUyQ5fSENa8uCdoqp5A==",
+  "success": true,
+  "projectFilePath": "D:\\Github\\ExpenseTrackingApp\\ExpenseTrackingApp\\ExpenseTrackingApp.iOS\\ExpenseTrackingApp.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sumam\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\sumam\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\sumam\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
