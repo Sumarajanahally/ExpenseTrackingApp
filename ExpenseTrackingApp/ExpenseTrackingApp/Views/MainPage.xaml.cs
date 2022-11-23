@@ -32,64 +32,64 @@ namespace ExpenseTrackingApp.Views
         {
             expenses = new List<Expense>();
             GetExpensesList();
-            GroupedExpenses = new ObservableCollection<GroupedExpenseModel>();
-            var foodExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Food", ExpenseCategoryInitial = "F" };
-            var automobileExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "AutoMobile", ExpenseCategoryInitial = "A" };
-            var medicalExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Medical", ExpenseCategoryInitial = "M" };
-            var utilitiesExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Utlilities", ExpenseCategoryInitial = "U" };
-            var rentExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Rent", ExpenseCategoryInitial = "R" };
-            var miscExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Misc", ExpenseCategoryInitial = "MSc" };
+            //GroupedExpenses = new ObservableCollection<GroupedExpenseModel>();
+            //var foodExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Food", ExpenseCategoryInitial = "F" };
+            //var automobileExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "AutoMobile", ExpenseCategoryInitial = "A" };
+            //var medicalExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Medical", ExpenseCategoryInitial = "M" };
+            //var utilitiesExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Utlilities", ExpenseCategoryInitial = "U" };
+            //var rentExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Rent", ExpenseCategoryInitial = "R" };
+            //var miscExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Misc", ExpenseCategoryInitial = "MSc" };
 
-            foreach (var f in expenses.Where(t => t.Type == ExpenseType.Food).ToList())
-            {
-                foodExpenseGroup.Add(new Expense() { Name = f.Name,Amount = f.Amount,FileName = f.FileName,Type = f.Type,Date = f.Date });
+            //foreach (var f in expenses.Where(t => t.Type == ExpenseType.Food).ToList())
+            //{
+            //    foodExpenseGroup.Add(new Expense() { Name = f.Name,Amount = f.Amount,FileName = f.FileName,Type = f.Type,Date = f.Date });
                
-            }
+            //}
 
-            foreach (var a in expenses.Where(t => t.Type == ExpenseType.Automobile).ToList())
-            {
-                automobileExpenseGroup.Add(new Expense() 
-                { Name = a.Name, Amount = a.Amount, FileName = a.FileName, Type = a.Type, Date = a.Date });
+            //foreach (var a in expenses.Where(t => t.Type == ExpenseType.Automobile).ToList())
+            //{
+            //    automobileExpenseGroup.Add(new Expense() 
+            //    { Name = a.Name, Amount = a.Amount, FileName = a.FileName, Type = a.Type, Date = a.Date });
 
-            }
+            //}
 
-            foreach (var m in expenses.Where(t => t.Type == ExpenseType.Medical).ToList())
-            {
-                medicalExpenseGroup.Add(new Expense() 
-                { Name = m.Name, Amount = m.Amount, FileName = m.FileName, Type = m.Type, Date = m.Date });
+            //foreach (var m in expenses.Where(t => t.Type == ExpenseType.Medical).ToList())
+            //{
+            //    medicalExpenseGroup.Add(new Expense() 
+            //    { Name = m.Name, Amount = m.Amount, FileName = m.FileName, Type = m.Type, Date = m.Date });
 
-            }
+            //}
 
-            foreach (var u in expenses.Where(t => t.Type == ExpenseType.Utilities).ToList())
-            {
-                utilitiesExpenseGroup.Add(new Expense()
-                { Name = u.Name, Amount = u.Amount, FileName = u.FileName, Type = u.Type, Date = u.Date });
+            //foreach (var u in expenses.Where(t => t.Type == ExpenseType.Utilities).ToList())
+            //{
+            //    utilitiesExpenseGroup.Add(new Expense()
+            //    { Name = u.Name, Amount = u.Amount, FileName = u.FileName, Type = u.Type, Date = u.Date });
 
-            }
+            //}
 
-            foreach (var r in expenses.Where(t => t.Type == ExpenseType.Rent).ToList())
-            {
-                rentExpenseGroup.Add(new Expense() 
-                { Name = r.Name, Amount = r.Amount, FileName = r.FileName, Type = r.Type, Date = r.Date });
+            //foreach (var r in expenses.Where(t => t.Type == ExpenseType.Rent).ToList())
+            //{
+            //    rentExpenseGroup.Add(new Expense() 
+            //    { Name = r.Name, Amount = r.Amount, FileName = r.FileName, Type = r.Type, Date = r.Date });
 
-            }
+            //}
 
-            foreach (var msc in expenses.Where(t => t.Type == ExpenseType.Misc).ToList())
-            {
-                miscExpenseGroup.Add(new Expense() 
-                { Name = msc.Name, Amount = msc.Amount, FileName = msc.FileName, Type = msc.Type, Date = msc.Date });
+            //foreach (var msc in expenses.Where(t => t.Type == ExpenseType.Misc).ToList())
+            //{
+            //    miscExpenseGroup.Add(new Expense() 
+            //    { Name = msc.Name, Amount = msc.Amount, FileName = msc.FileName, Type = msc.Type, Date = msc.Date });
 
-            }
-            GroupedExpenses.Clear();
-            GroupedExpenses.Add(foodExpenseGroup);
-            GroupedExpenses.Add(automobileExpenseGroup);
-            GroupedExpenses.Add(medicalExpenseGroup);
-            GroupedExpenses.Add(utilitiesExpenseGroup);
-            GroupedExpenses.Add(rentExpenseGroup);
-            GroupedExpenses.Add(miscExpenseGroup);
-            Lstview.ItemsSource = GroupedExpenses;
+            //}
+            //GroupedExpenses.Clear();
+            //GroupedExpenses.Add(foodExpenseGroup);
+            //GroupedExpenses.Add(automobileExpenseGroup);
+            //GroupedExpenses.Add(medicalExpenseGroup);
+            //GroupedExpenses.Add(utilitiesExpenseGroup);
+            //GroupedExpenses.Add(rentExpenseGroup);
+            //GroupedExpenses.Add(miscExpenseGroup);
+            //Lstview.ItemsSource = GroupedExpenses;
             
-            //Listview.ItemsSource = expenses.OrderByDescending(t => t.Date);
+           Lstview.ItemsSource = expenses.OrderByDescending(t => t.Date);
         }
 
         private void GetExpensesList()

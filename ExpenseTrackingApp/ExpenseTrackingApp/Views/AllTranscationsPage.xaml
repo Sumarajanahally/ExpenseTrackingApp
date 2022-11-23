@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:model ="clr-namespace:ExpenseTrackingApp.Models"
-             x:Class="ExpenseTrackingApp.Views.MainPage">
+             x:Class="ExpenseTrackingApp.Views.AllTranscationsPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="Lstview"
+            <ListView x:Name="Lstview" IsGroupingEnabled="True" 
+                     GroupDisplayBinding="{Binding ExpenseCategoryName}"
                       Margin="20"
-                      ItemSelected="Listview_ItemSelected"
+                      
                       SeparatorVisibility="Default">
-                <!-- ItemSelected="Listview_ItemSelected"   GroupDisplayBinding="{Binding ExpenseCategoryName}" -->
+                
                 <ListView.ItemTemplate>
-                    <DataTemplate >
+                    <DataTemplate>
 
                         <ViewCell>
                             <StackLayout>
@@ -23,12 +23,12 @@
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>
-                        <!-- <TextCell Text="{Binding Amount}" Detail="{Binding Name}" /> -->         
+                      
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
+
             </ListView>
-           
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

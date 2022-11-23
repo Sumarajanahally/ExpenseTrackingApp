@@ -15,6 +15,7 @@
                     Title="Select a Expense Type" >
                 <!--ItemsSource="{Binding Expe}" -->
                 <Picker.Items>
+
                     <x:String>Food</x:String>
                     <x:String>Automobile</x:String>
                     <x:String>Medical</x:String>
