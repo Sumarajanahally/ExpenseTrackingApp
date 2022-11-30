@@ -27,31 +27,43 @@ namespace ExpenseTrackingApp.Views
         private string budgetFileName, budgetmonth, budgetamunt;
         double totalexpense;
 
-        private List<Expense> expensesByMonth;
+        private List<Expense> expensesByMonth = new List<Expense>();
         public MainPage()
         {
             InitializeComponent();
             MonthPicker.SelectedIndex = DateTime.Now.Month - 1;//current month selected by default
-            expensesByMonth = new List<Expense>();
-
+          
 
         }
 
 
         protected override void OnAppearing()
         {
+            PageLoad();
+        }
+
+
+        private void PageLoad()
+        {
             expenses = new List<Expense>();
             GetExpensesList();
-            BudgetAmount.Text = string.Empty; 
+            BudgetAmount.Text = string.Empty;
             GetBudget(MonthPicker.SelectedItem.ToString());
             expensesByMonth.Clear();
             expensesByMonth = GetExpenseByMonth(MonthPicker.SelectedItem.ToString());
             totalexpense = expensesByMonth.Sum(t => t.Amount);
             Lstview.ItemsSource = expensesByMonth.OrderByDescending(t => t.Type);
             lblSpent.Text = "Amount Spent: " + totalexpense.ToString();
-            lblRemaining.Text = "Amount Remaining: " + (Double.Parse(budgetamunt) - totalexpense).ToString();
-        }
+            double amountRemaining;
+            if (!string.IsNullOrEmpty(budgetamunt))
+            { amountRemaining = Double.Parse(budgetamunt) - totalexpense; }
+            else
+            {
+                amountRemaining = 0;
+            }
+             lblRemaining.Text = "Amount Remaining: " + amountRemaining.ToString(); 
 
+        }
         private void GetBudget(string month)
         {
             var files = Directory.EnumerateFiles(
@@ -137,9 +149,7 @@ namespace ExpenseTrackingApp.Views
 
         private void MonthPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            expensesByMonth.Clear();
-            expensesByMonth = GetExpenseByMonth(MonthPicker.SelectedItem.ToString());
-            Lstview.ItemsSource = expensesByMonth.OrderByDescending(t => t.Type);
+            PageLoad();
         }
 
         private async void   Save_Clicked(object sender, EventArgs e)
