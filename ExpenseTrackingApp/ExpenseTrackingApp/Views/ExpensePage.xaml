@@ -12,7 +12,7 @@
                     Placeholder="Enter Amount"
                     HeightRequest="50"/>
             <Picker x:Name="ExpenseT"  
-                    Title="Select a Expense Type" >
+                    Title="Select a Expense Type"  >
                 <!--ItemsSource="{Binding Expe}" -->
                 <Picker.Items>
 

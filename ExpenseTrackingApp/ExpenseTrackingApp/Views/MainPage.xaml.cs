@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
@@ -53,7 +54,7 @@ namespace ExpenseTrackingApp.Views
             expensesByMonth = GetExpenseByMonth(MonthPicker.SelectedItem.ToString());
             totalexpense = expensesByMonth.Sum(t => t.Amount);
             Lstview.ItemsSource = expensesByMonth.OrderByDescending(t => t.Type);
-            lblSpent.Text = "Amount Spent: " + totalexpense.ToString();
+            lblSpent.Text = "Amount Spent: $" + totalexpense.ToString();
             double amountRemaining;
             if (!string.IsNullOrEmpty(budgetamunt))
             { amountRemaining = Double.Parse(budgetamunt) - totalexpense; }
@@ -61,7 +62,7 @@ namespace ExpenseTrackingApp.Views
             {
                 amountRemaining = 0;
             }
-             lblRemaining.Text = "Amount Remaining: " + amountRemaining.ToString(); 
+             lblRemaining.Text = " Amount Remaining: $" + amountRemaining.ToString(); 
 
         }
         private void GetBudget(string month)
@@ -97,9 +98,9 @@ namespace ExpenseTrackingApp.Views
                 string[] lines = allText.Split('\n');
                 var amount = lines[1];
                 var desc = lines[2];
-                ExpenseType type = GetExpenseType(lines[3]);
+                ExpenseType type = (ExpenseType)Enum.Parse(typeof(ExpenseType), lines[3]);
                 DateTime dateselected = DateTime.Parse(lines[4]);
-                
+                string typeImageFile = GetImage(type);
 
                 var expense = new Expense
                 {
@@ -107,37 +108,47 @@ namespace ExpenseTrackingApp.Views
                     Date = dateselected,
                     Name = desc,
                     Type = type,
-                    FileName = file
-
+                    FileName = file,
+                    TypeIconFileName = typeImageFile
 
                 };
                 expenses.Add(expense);
             }
         }
-        private ExpenseType GetExpenseType(string value)
-        {
-            ExpenseType ex  ;
 
-            switch (value)
+        private string GetImage(ExpenseType type)
+        {
+            string path;
+            switch (type)
             {
-                case "Food": ex = ExpenseType.Food; 
+                case ExpenseType.Rent:
+                    path = "Rent.png";
                     break;
-                case "Automobile": ex = ExpenseType.Automobile;
+                case ExpenseType.Automobile:
+                    path = "Automobile.png";
                     break;
-                case "Medical": ex = ExpenseType.Medical;
+                case ExpenseType.Food:
+                    path = "Food.png";
                     break;
-                case "Utilities": ex = ExpenseType.Utilities;
+                case ExpenseType.Misc:
+                    path = "Misc.png";
                     break;
-                case "Rent": ex = ExpenseType.Rent;
+                case ExpenseType.Utilities:
+                    path = "Utilities.png";
                     break;
-                case "Misc": ex = ExpenseType.Misc;
+                case ExpenseType.Medical :
+                    path = "Medical.png";
                     break;
-                default: ex = ExpenseType.Misc;
+
+                default:
+                    path = "xamarin_logo.png";
                     break;
-                
+
+                    
             }
-            return ex;
+            return path;
         }
+
         private async void Listview_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             await Navigation.PushModalAsync(new ExpensePage

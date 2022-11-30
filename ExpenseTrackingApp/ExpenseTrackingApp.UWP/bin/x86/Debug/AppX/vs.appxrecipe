@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-11-30T07:12:52.773</Modified>
+      <Modified>2022-11-30T09:39:10.861</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\ExpenseTrackingApp.UWP.exe">
       <PackagePath>entrypoint\ExpenseTrackingApp.UWP.exe</PackagePath>
-      <Modified>2022-11-30T07:12:51.295</Modified>
+      <Modified>2022-11-30T08:38:03.644</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sumam\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.12\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -68,7 +68,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp\bin\Debug\netstandard2.0\ExpenseTrackingApp.dll">
       <PackagePath>ExpenseTrackingApp.dll</PackagePath>
-      <Modified>2022-11-30T07:12:44.538</Modified>
+      <Modified>2022-11-30T09:39:02.715</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sumam\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -82,9 +82,21 @@
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
       <Modified>2021-10-14T09:49:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2022-11-18T19:08:33.707</Modified>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Automobile.png">
+      <PackagePath>Automobile.png</PackagePath>
+      <Modified>2022-11-30T08:41:03.191</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Food.png">
+      <PackagePath>Food.png</PackagePath>
+      <Modified>2022-11-30T08:56:16.776</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Medical.png">
+      <PackagePath>Medical.png</PackagePath>
+      <Modified>2022-11-30T08:56:16.750</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Misc.png">
+      <PackagePath>Misc.png</PackagePath>
+      <Modified>2022-11-30T08:56:16.650</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -221,6 +233,14 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-11-18T19:08:33.663</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Rent.png">
+      <PackagePath>Rent.png</PackagePath>
+      <Modified>2022-11-30T08:56:16.687</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Utilities.png">
+      <PackagePath>Utilities.png</PackagePath>
+      <Modified>2022-11-30T08:56:16.720</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\xamarin_logo.png">
       <PackagePath>xamarin_logo.png</PackagePath>
       <Modified>2022-11-18T19:08:33.968</Modified>
@@ -233,17 +253,21 @@
       <PackagePath>icon_feed.png</PackagePath>
       <Modified>2022-11-18T19:08:33.912</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2022-11-18T19:08:33.707</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\ExpenseTrackingApp.UWP.xr.xml">
       <PackagePath>ExpenseTrackingApp.UWP.xr.xml</PackagePath>
       <Modified>2022-11-18T19:19:14.625</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-11-30T07:12:51.220</Modified>
+      <Modified>2022-11-30T09:39:09.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-11-30T07:12:51.220</Modified>
+      <Modified>2022-11-30T09:39:09.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -259,11 +283,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-11-23T02:46:22.685</Modified>
+      <Modified>2022-11-30T09:00:46.436</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\Core\ExpenseTrackingApp.UWP.exe">
       <PackagePath>ExpenseTrackingApp.UWP.exe</PackagePath>
-      <Modified>2022-11-30T07:12:52.768</Modified>
+      <Modified>2022-11-30T09:39:10.856</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

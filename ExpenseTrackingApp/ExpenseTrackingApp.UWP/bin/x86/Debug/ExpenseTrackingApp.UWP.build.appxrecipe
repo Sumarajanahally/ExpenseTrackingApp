@@ -61,8 +61,17 @@
     <AppxPackagedFile Include="C:\Users\sumam\.nuget\packages\xamarin.forms\5.0.0.2196\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Automobile.png">
+      <PackagePath>Automobile.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Food.png">
+      <PackagePath>Food.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Medical.png">
+      <PackagePath>Medical.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Misc.png">
+      <PackagePath>Misc.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -172,6 +181,12 @@
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Rent.png">
+      <PackagePath>Rent.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Utilities.png">
+      <PackagePath>Utilities.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\xamarin_logo.png">
       <PackagePath>xamarin_logo.png</PackagePath>
     </AppxPackagedFile>
@@ -180,6 +195,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\icon_feed.png">
       <PackagePath>icon_feed.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\ExpenseTrackingApp.UWP.xr.xml">
       <PackagePath>ExpenseTrackingApp.UWP.xr.xml</PackagePath>

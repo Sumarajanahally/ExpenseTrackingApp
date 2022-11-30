@@ -58,8 +58,9 @@
                             <ViewCell>
                                 <StackLayout>
                                     <StackLayout Orientation="Horizontal" HeightRequest="20" BackgroundColor="WhiteSmoke">
+                                        <Image Source="{Binding TypeIconFileName}" HorizontalOptions ="Start" VerticalOptions="CenterAndExpand"/>
                                         <Label Text="{Binding Type}"  
-                                           FontSize="15"   HorizontalOptions ="Start" VerticalOptions="CenterAndExpand" />
+                                          FontSize="15"   HorizontalOptions ="Start" VerticalOptions="CenterAndExpand" />
                                         <Label Text="{Binding Name}"
                                  FontSize="15" Margin="20,0,0,0" HorizontalOptions ="Center" VerticalOptions="CenterAndExpand" />
                                         
