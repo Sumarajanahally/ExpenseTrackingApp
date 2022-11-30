@@ -157,7 +157,7 @@ namespace ExpenseTrackingApp.Views
             var month = MonthPicker.SelectedItem;
             var monthBudget = BudgetAmount.Text;
             var allText = string.Empty;
-            if (budgetFileName == null)
+            if (string.IsNullOrEmpty(budgetFileName))
             {
                 budgetFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 $"{Path.GetRandomFileName()}.{month}.budget.txt");
@@ -177,8 +177,7 @@ namespace ExpenseTrackingApp.Views
 
             }
 
-            lblSpent.Text = "Amount Spent: " + totalexpense.ToString();
-            lblRemaining.Text = "Amount Remaining: " + (Double.Parse(budgetamunt) - totalexpense).ToString();
+           
         }
 
         private List<Expense> GetExpenseByMonth(string month)
