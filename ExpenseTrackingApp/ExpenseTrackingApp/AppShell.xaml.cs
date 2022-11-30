@@ -9,11 +9,12 @@ namespace ExpenseTrackingApp
     public partial class AppShell : Xamarin.Forms.Shell
     {
         public ShellContent MainPageContent;
+        public ShellContent ExpensePageContent;
         public AppShell()
         {
             InitializeComponent();
             MainPageContent = Budget;
-           
+            ExpensePageContent = Expenses;
         }
 
     }

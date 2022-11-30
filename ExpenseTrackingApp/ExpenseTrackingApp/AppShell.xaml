@@ -31,7 +31,7 @@
 
     <TabBar>
         <ShellContent x:Name="Budget" Title="Budget" Icon="icon_about.png"  ContentTemplate="{DataTemplate local:MainPage}" />
-        <ShellContent x:Name="Expenses" Title="Expenses" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ExpensePage}" />
+        <ShellContent x:Name="Expenses" Title="Expenses" Route="ExpensePage" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ExpensePage}" />
     </TabBar>
 
     <!--

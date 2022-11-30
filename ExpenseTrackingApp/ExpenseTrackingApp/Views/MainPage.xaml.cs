@@ -176,8 +176,9 @@ namespace ExpenseTrackingApp.Views
                 await DisplayAlert("Alert", $"{month} budget is set to {monthBudget}.", "OK");
 
             }
+           Shell.Current.CurrentItem  = (Shell.Current as AppShell).ExpensePageContent;
 
-           
+
         }
 
         private List<Expense> GetExpenseByMonth(string month)
