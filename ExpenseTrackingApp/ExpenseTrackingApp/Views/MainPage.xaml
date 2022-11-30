@@ -4,31 +4,77 @@
              xmlns:model ="clr-namespace:ExpenseTrackingApp.Models"
              x:Class="ExpenseTrackingApp.Views.MainPage">
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="Lstview"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />    
+
+
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Orientation="Horizontal">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Picker Grid.Column="0" x:Name="MonthPicker" Title ="" WidthRequest="400"  
+                        Margin="20,0,0,0" HorizontalOptions="Start" >
+                        <Picker.Items>
+                    <x:String>January</x:String>
+                    <x:String>Feburary</x:String>
+                    <x:String>March</x:String>
+                    <x:String>April</x:String>
+                    <x:String>May</x:String>
+                    <x:String>June</x:String>
+                    <x:String>July</x:String>
+                    <x:String>August</x:String>
+                    <x:String>September</x:String>
+                    <x:String>October</x:String>
+                    <x:String>November</x:String>
+                    <x:String>December</x:String>
+                </Picker.Items>
+            </Picker>
+                    <Editor x:Name="BudgetAmount"
+                    Placeholder="Enter Amount"
+                    HeightRequest="50" Grid.Column="1" />
+                    <Button x:Name="Save" Grid.Column="2" Text="Save" Clicked="Save_Clicked" />
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Horizontal" >
+                <Label  x:Name="lblSpent" HorizontalTextAlignment="Center" TextColor="SteelBlue"/>
+                <Label  x:Name="lblRemaining" HorizontalTextAlignment="Center" TextColor="MediumSeaGreen" />
+            </StackLayout>
+            <StackLayout Grid.Row="2" Orientation="Horizontal">
+                <ListView x:Name="Lstview"
                       Margin="20"
                       ItemSelected="Listview_ItemSelected"
                       SeparatorVisibility="Default">
-                <!-- ItemSelected="Listview_ItemSelected"   GroupDisplayBinding="{Binding ExpenseCategoryName}" -->
-                <ListView.ItemTemplate>
-                    <DataTemplate >
 
-                        <ViewCell>
-                            <StackLayout>
-                                <StackLayout Orientation="Horizontal" HeightRequest="20" BackgroundColor="WhiteSmoke">
-                                    <Label Text="{Binding Name}"
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Expense" >
+
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal" HeightRequest="20" BackgroundColor="WhiteSmoke">
+
+                                        <Label Text="{Binding Name}"
                                  FontSize="15" Margin="20,0,0,0" HorizontalOptions ="Start" VerticalOptions="CenterAndExpand" />
-                                    <Label Text="{Binding Amount}"
+                                        <Label Text="{Binding Type}"  
+                                           FontSize="15"   HorizontalOptions ="Center" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding Amount}"
                                 FontSize="15" Margin="0,0,35,0" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" />
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                        <!-- <TextCell Text="{Binding Amount}" Detail="{Binding Name}" /> -->         
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                
-            </ListView>
-           
-        </StackLayout>
+                            </ViewCell>
+                            <!-- <TextCell Text="{Binding Amount}" Detail="{Binding Name}" /> -->
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

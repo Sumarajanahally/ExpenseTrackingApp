@@ -44,8 +44,11 @@ namespace ExpenseTrackingApp.Models
 
         public ExpenseType  Type { get; set; }
 
+        public string TypeIconFileName { get; set; }
         public Expense()
-        { }
+        { 
+
+        }
     }
 
 

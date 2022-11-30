@@ -6,9 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Xml;
 using ExpenseTrackingApp.Models;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 using static System.Net.WebRequestMethods;
 using static Xamarin.Essentials.Permissions;
@@ -22,9 +24,17 @@ namespace ExpenseTrackingApp.Views
         private List<Expense> expenses;
         private ObservableCollection<GroupedExpenseModel> GroupedExpenses { get; set; }
 
+        private string budgetFileName, budgetmonth, budgetamunt;
+        double totalexpense;
+
+        private List<Expense> expensesByMonth;
         public MainPage()
         {
             InitializeComponent();
+            MonthPicker.SelectedIndex = DateTime.Now.Month - 1;//current month selected by default
+            expensesByMonth = new List<Expense>();
+
+
         }
 
 
@@ -32,64 +42,35 @@ namespace ExpenseTrackingApp.Views
         {
             expenses = new List<Expense>();
             GetExpensesList();
-            //GroupedExpenses = new ObservableCollection<GroupedExpenseModel>();
-            //var foodExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Food", ExpenseCategoryInitial = "F" };
-            //var automobileExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "AutoMobile", ExpenseCategoryInitial = "A" };
-            //var medicalExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Medical", ExpenseCategoryInitial = "M" };
-            //var utilitiesExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Utlilities", ExpenseCategoryInitial = "U" };
-            //var rentExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Rent", ExpenseCategoryInitial = "R" };
-            //var miscExpenseGroup = new GroupedExpenseModel() { ExpenseCategoryName = "Misc", ExpenseCategoryInitial = "MSc" };
+            BudgetAmount.Text = string.Empty; 
+            GetBudget(MonthPicker.SelectedItem.ToString());
+            expensesByMonth.Clear();
+            expensesByMonth = GetExpenseByMonth(MonthPicker.SelectedItem.ToString());
+            totalexpense = expensesByMonth.Sum(t => t.Amount);
+            Lstview.ItemsSource = expensesByMonth.OrderByDescending(t => t.Type);
+            lblSpent.Text = "Amount Spent: " + totalexpense.ToString();
+            lblRemaining.Text = "Amount Remaining: " + (Double.Parse(budgetamunt) - totalexpense).ToString();
+        }
 
-            //foreach (var f in expenses.Where(t => t.Type == ExpenseType.Food).ToList())
-            //{
-            //    foodExpenseGroup.Add(new Expense() { Name = f.Name,Amount = f.Amount,FileName = f.FileName,Type = f.Type,Date = f.Date });
-               
-            //}
+        private void GetBudget(string month)
+        {
+            var files = Directory.EnumerateFiles(
+                    Environment.GetFolderPath(
+                        Environment.SpecialFolder.LocalApplicationData), $"*.{month}.budget.txt");
+            budgetFileName = string.Empty;
+            budgetmonth = string.Empty;
+            budgetamunt = string.Empty;
+            foreach (var file in files)
+            {
+                var allText = System.IO.File.ReadAllText(file);
+                string[] lines = allText.Split('\n');
+                budgetFileName = lines[0];
+                budgetmonth = lines[1];
+                budgetamunt = lines[2];
+            }
 
-            //foreach (var a in expenses.Where(t => t.Type == ExpenseType.Automobile).ToList())
-            //{
-            //    automobileExpenseGroup.Add(new Expense() 
-            //    { Name = a.Name, Amount = a.Amount, FileName = a.FileName, Type = a.Type, Date = a.Date });
 
-            //}
-
-            //foreach (var m in expenses.Where(t => t.Type == ExpenseType.Medical).ToList())
-            //{
-            //    medicalExpenseGroup.Add(new Expense() 
-            //    { Name = m.Name, Amount = m.Amount, FileName = m.FileName, Type = m.Type, Date = m.Date });
-
-            //}
-
-            //foreach (var u in expenses.Where(t => t.Type == ExpenseType.Utilities).ToList())
-            //{
-            //    utilitiesExpenseGroup.Add(new Expense()
-            //    { Name = u.Name, Amount = u.Amount, FileName = u.FileName, Type = u.Type, Date = u.Date });
-
-            //}
-
-            //foreach (var r in expenses.Where(t => t.Type == ExpenseType.Rent).ToList())
-            //{
-            //    rentExpenseGroup.Add(new Expense() 
-            //    { Name = r.Name, Amount = r.Amount, FileName = r.FileName, Type = r.Type, Date = r.Date });
-
-            //}
-
-            //foreach (var msc in expenses.Where(t => t.Type == ExpenseType.Misc).ToList())
-            //{
-            //    miscExpenseGroup.Add(new Expense() 
-            //    { Name = msc.Name, Amount = msc.Amount, FileName = msc.FileName, Type = msc.Type, Date = msc.Date });
-
-            //}
-            //GroupedExpenses.Clear();
-            //GroupedExpenses.Add(foodExpenseGroup);
-            //GroupedExpenses.Add(automobileExpenseGroup);
-            //GroupedExpenses.Add(medicalExpenseGroup);
-            //GroupedExpenses.Add(utilitiesExpenseGroup);
-            //GroupedExpenses.Add(rentExpenseGroup);
-            //GroupedExpenses.Add(miscExpenseGroup);
-            //Lstview.ItemsSource = GroupedExpenses;
-            
-           Lstview.ItemsSource = expenses.OrderByDescending(t => t.Date);
+            BudgetAmount.Text = budgetamunt;
         }
 
         private void GetExpensesList()
@@ -106,7 +87,7 @@ namespace ExpenseTrackingApp.Views
                 var desc = lines[2];
                 ExpenseType type = GetExpenseType(lines[3]);
                 DateTime dateselected = DateTime.Parse(lines[4]);
-
+                
 
                 var expense = new Expense
                 {
@@ -152,6 +133,52 @@ namespace ExpenseTrackingApp.Views
                 BindingContext = (Expense)e.SelectedItem
             });
 
+        }
+
+        private void MonthPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            expensesByMonth.Clear();
+            expensesByMonth = GetExpenseByMonth(MonthPicker.SelectedItem.ToString());
+            Lstview.ItemsSource = expensesByMonth.OrderByDescending(t => t.Type);
+        }
+
+        private async void   Save_Clicked(object sender, EventArgs e)
+        {
+            var month = MonthPicker.SelectedItem;
+            var monthBudget = BudgetAmount.Text;
+            var allText = string.Empty;
+            if (budgetFileName == null)
+            {
+                budgetFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                $"{Path.GetRandomFileName()}.{month}.budget.txt");
+            }
+
+            if (string.IsNullOrEmpty(monthBudget) || !(double.TryParse(monthBudget, out var amount)))
+            {
+                await DisplayAlert("Alert", "Please enter a valid number", "OK");
+            }
+            else
+            {
+                allText += budgetFileName + "\n";
+                allText += month + "\n";
+                allText += monthBudget + "\n";
+                System.IO.File.WriteAllText(budgetFileName, allText);
+                await DisplayAlert("Alert", $"{month} budget is set to {monthBudget}.", "OK");
+
+            }
+
+            lblSpent.Text = "Amount Spent: " + totalexpense.ToString();
+            lblRemaining.Text = "Amount Remaining: " + (Double.Parse(budgetamunt) - totalexpense).ToString();
+        }
+
+        private List<Expense> GetExpenseByMonth(string month)
+        {
+           
+            int iMonth = (int)Enum.Parse(typeof(Month), month) +1;
+            List<Expense> filteredList = new List<Expense>();
+            filteredList = expenses.Where(t => t.Date.Month.Equals(iMonth)).ToList();
+           
+            return filteredList;
         }
     }
 }
