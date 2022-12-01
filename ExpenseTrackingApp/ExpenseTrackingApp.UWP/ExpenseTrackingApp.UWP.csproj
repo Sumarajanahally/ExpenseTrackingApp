@@ -105,7 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Automobile.png" />
+    <Content Include="budget.png" />
     <Content Include="Food.png" />
+    <Content Include="groceries.png" />
     <Content Include="Medical.png" />
     <Content Include="Misc.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -137,6 +139,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="Rent.png" />
+    <Content Include="shopping.png" />
     <Content Include="Utilities.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="icon_about.png" />

@@ -52,10 +52,5 @@ namespace ExpenseTrackingApp.Models
     }
 
 
-    public class GroupedExpenseModel : ObservableCollection<Expense>
-    {
-        public string ExpenseCategoryName { get; set; }
-        public string ExpenseCategoryInitial { get; set; }
-        
-    }
+   
 }

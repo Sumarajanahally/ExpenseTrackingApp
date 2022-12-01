@@ -23,8 +23,6 @@ namespace ExpenseTrackingApp.Views
     public partial class MainPage : ContentPage
     {
         private List<Expense> expenses;
-        private ObservableCollection<GroupedExpenseModel> GroupedExpenses { get; set; }
-
         private string budgetFileName, budgetmonth, budgetamunt;
         double totalexpense;
 

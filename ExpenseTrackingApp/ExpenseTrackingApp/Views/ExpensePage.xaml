@@ -4,17 +4,18 @@
              x:Class="ExpenseTrackingApp.Views.ExpensePage">
     <ContentPage.Content>
         <StackLayout Margin="20,10,20,0">
-            <Label Text="Expense" FontSize="20" FontAttributes="Bold" />
+            <Label Text="Expense" FontSize="Medium" FontAttributes="Bold" />
             <Editor x:Name="ExpenseDesc"
                   Placeholder="Enter your expense description"
-                  HeightRequest="100"></Editor>
+                  HeightRequest="80"></Editor>
             <Editor x:Name="ExpenseAmount"
                     Placeholder="Enter Amount"
                     HeightRequest="50"/>
-            <Picker x:Name="ExpenseT"  
-                    Title="Select a Expense Type"  >
+            <!--<Label Text="Select the expense Type" FontSize="Medium" FontAttributes="Bold" />-->
+           <Picker x:Name="ExpenseT"  
+                    Title="Select a Expense Type"  > 
                 <!--ItemsSource="{Binding Expe}" -->
-                <Picker.Items>
+              <Picker.Items>
 
                     <x:String>Food</x:String>
                     <x:String>Automobile</x:String>
@@ -23,7 +24,7 @@
                     <x:String>Rent</x:String>
                     <x:String>Misc</x:String>
                 </Picker.Items>
-            </Picker>
+            </Picker> 
             <Label Text="Date" Margin ="0,10,0,0 " HorizontalOptions="Start" />
             <DatePicker x:Name="ExpenseDate"
                        

@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-11-30T09:39:10.861</Modified>
+      <Modified>2022-12-01T07:05:28.194</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\ExpenseTrackingApp.UWP.exe">
       <PackagePath>entrypoint\ExpenseTrackingApp.UWP.exe</PackagePath>
-      <Modified>2022-11-30T08:38:03.644</Modified>
+      <Modified>2022-12-01T06:39:13.661</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sumam\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.12\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -68,7 +68,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp\bin\Debug\netstandard2.0\ExpenseTrackingApp.dll">
       <PackagePath>ExpenseTrackingApp.dll</PackagePath>
-      <Modified>2022-11-30T09:39:02.715</Modified>
+      <Modified>2022-12-01T07:02:14.301</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sumam\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -86,9 +86,17 @@
       <PackagePath>Automobile.png</PackagePath>
       <Modified>2022-11-30T08:41:03.191</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\budget.png">
+      <PackagePath>budget.png</PackagePath>
+      <Modified>2022-12-01T06:14:04.377</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Food.png">
       <PackagePath>Food.png</PackagePath>
       <Modified>2022-11-30T08:56:16.776</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\groceries.png">
+      <PackagePath>groceries.png</PackagePath>
+      <Modified>2022-12-01T06:57:07.460</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Medical.png">
       <PackagePath>Medical.png</PackagePath>
@@ -237,6 +245,10 @@
       <PackagePath>Rent.png</PackagePath>
       <Modified>2022-11-30T08:56:16.687</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\shopping.png">
+      <PackagePath>shopping.png</PackagePath>
+      <Modified>2022-12-01T06:57:07.522</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\Utilities.png">
       <PackagePath>Utilities.png</PackagePath>
       <Modified>2022-11-30T08:56:16.720</Modified>
@@ -263,11 +275,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-11-30T09:39:09.449</Modified>
+      <Modified>2022-12-01T07:05:26.554</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-11-30T09:39:09.449</Modified>
+      <Modified>2022-12-01T07:05:26.554</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -283,11 +295,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-11-30T09:00:46.436</Modified>
+      <Modified>2022-12-01T06:59:47.580</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.UWP\bin\x86\Debug\Core\ExpenseTrackingApp.UWP.exe">
       <PackagePath>ExpenseTrackingApp.UWP.exe</PackagePath>
-      <Modified>2022-11-30T09:39:10.856</Modified>
+      <Modified>2022-12-01T07:05:28.176</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

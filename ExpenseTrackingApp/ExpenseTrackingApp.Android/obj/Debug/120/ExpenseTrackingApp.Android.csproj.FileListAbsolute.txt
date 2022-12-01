@@ -634,3 +634,11 @@ D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\D
 D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\res\drawable\automobile.png
+D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\res\drawable\misc.png
+D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\res\drawable\food.png
+D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\res\drawable\medical.png
+D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\res\drawable\utilities.png
+D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\res\drawable\rent.png
+D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\res\drawable\shopping.png
+D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp.Android\obj\Debug\120\res\drawable\groceries.png

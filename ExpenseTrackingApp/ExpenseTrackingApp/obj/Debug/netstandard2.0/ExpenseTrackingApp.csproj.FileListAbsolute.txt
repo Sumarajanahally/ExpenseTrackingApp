@@ -16,4 +16,3 @@ D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp\obj\Debug\net
 D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp\obj\Debug\netstandard2.0\ref\ExpenseTrackingApp.dll
 D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp\obj\Debug\netstandard2.0\Views\ExpensePage.xaml.g.cs
 D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
-D:\Github\ExpenseTrackingApp\ExpenseTrackingApp\ExpenseTrackingApp\obj\Debug\netstandard2.0\Views\AllTranscationsPage.xaml.g.cs
